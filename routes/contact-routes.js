@@ -18,7 +18,7 @@ routes.get('/contact', async (req, res, next) => {
   });
 
 // Route with contact ID validation
-routes.get('/contact/:id', validateContactParamId, async (req, res, next) => {
+routes.get('/contact/:id', async (req, res, next) => {
     console.log('in /contact/:id route');
     const result = validationResult(req);
     if (!result.isEmpty()) {
@@ -32,7 +32,7 @@ routes.get('/contact/:id', validateContactParamId, async (req, res, next) => {
     }
 });
 
-routes.post('/create', validateContactFields, async (req, res, next) => {
+routes.post('/create', async (req, res, next) => {
         console.log('in /contact/create route');
         const result = validationResult(req);
         if (!result.isEmpty()) {
