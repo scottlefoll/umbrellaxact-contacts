@@ -13,7 +13,7 @@ const doc = {
     title: 'Umbrellaxact Contact API',        // by default: 'REST API'
     description: 'Umbrellaxact Contact API',  // by default: ''
   },
-  host: 'https://cse341-spring23-w05-mongoose-shared.onrender.com',
+  host: 'https://umbrellaxact-contacts.onrender.com/',
 //   host: 'localhost:3000',
   basePath: '',
   schemes: [https],

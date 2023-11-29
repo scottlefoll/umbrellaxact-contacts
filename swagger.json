@@ -5,7 +5,7 @@
     "description": "CSE 331 W04 MongoDB Contact API",
     "version": "1.0.0"
   },
-  "host": "cse341-spring23-w03-personal-working.onrender.com",
+  "host": "https://umbrellaxact-contacts.onrender.com/",
   "basePath": "",
   "schemes": [
     "https"
