@@ -1,11 +1,11 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "MongoDB Contact API",
-    "description": "CSE 331 W04 MongoDB Contact API",
+    "title": "UmbrellaXact Contact API",
+    "description": "UmbrellaXact Contact API",
     "version": "1.0.0"
   },
-  "host": "https://umbrellaxact-contacts.onrender.com/",
+  "host": "umbrellaxact-contacts.onrender.com/",
   "basePath": "",
   "schemes": [
     "https"
@@ -31,7 +31,7 @@
     },
     "/contact/{id}": {
       "get": {
-        "description": "Get single contact by id (ie. 'avatar_2009'), case insensitive",
+        "description": "Get single contact by id (ie. 'sarah_kim'), case insensitive",
         "parameters": [
           {
             "name": "id",
@@ -110,9 +110,15 @@
           }
         ],
         "responses": {
-          "201": {
-            "description": "Created"
-          }
+            "201": {
+            "description": "Record creation successful."
+            },
+            "400": {
+            "description": "Record creation unsuccessful. Bad Request - Invalid input or duplicate record found"
+            },
+            "500": {
+            "description": "Record creation unsuccessful. Internal Server Error"
+            }
         }
       }
     }

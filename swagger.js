@@ -10,8 +10,8 @@ module.exports = router;
 const doc = {
   info: {
     version: '1.0',      // by default: '1.0.0'
-    title: 'Umbrellaxact Contact API',        // by default: 'REST API'
-    description: 'Umbrellaxact Contact API',  // by default: ''
+    title: 'UmbrellaXact Contact API',        // by default: 'REST API'
+    description: 'UmbrellaXact Contact API',  // by default: ''
   },
   host: 'https://umbrellaxact-contacts.onrender.com/',
 //   host: 'localhost:3000',
