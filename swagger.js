@@ -10,10 +10,10 @@ module.exports = router;
 const doc = {
   info: {
     version: '1.0',      // by default: '1.0.0'
-    title: 'MongoDB Movie API',        // by default: 'REST API'
-    description: 'CSE 341 Spring 23 MongoDB Movie API',  // by default: ''
+    title: 'Umbrellaxact Contact API',        // by default: 'REST API'
+    description: 'Umbrellaxact Contact API',  // by default: ''
   },
-  host: 'cse-342-spring23-w05-personal-working.onrender.com',
+  host: 'https://cse341-spring23-w05-mongoose-shared.onrender.com',
 //   host: 'localhost:3000',
   basePath: '',
   schemes: [https],

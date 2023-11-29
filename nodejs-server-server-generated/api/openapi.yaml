@@ -11,15 +11,15 @@ info:
 servers:
 - url: https://cse-342-spring23-w03.onrender.com
 paths:
-  /movies/create:
+  /contact/create:
     post:
       description: Auto generated using Swagger Inspector
-      operationId: moviesCreatePOST
+      operationId: contactCreatePOST
       requestBody:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/movies_create_body'
+              $ref: '#/components/schemas/contact_create_body'
             examples:
               "0":
                 value: |-
@@ -44,10 +44,10 @@ paths:
       x-swagger-router-controller: Default
     servers:
     - url: https://cse-342-spring23-w03.onrender.com
-  /movies/lastName/doe:
+  /contact/lastName/doe:
     get:
       description: Auto generated using Swagger Inspector
-      operationId: moviesLastNameDoeGET
+      operationId: contactLastNameGET
       responses:
         "200":
           description: Auto generated using Swagger Inspector
@@ -62,10 +62,10 @@ paths:
       x-swagger-router-controller: Default
     servers:
     - url: https://cse-342-spring23-w03.onrender.com
-  /movies/update/zoe_smithson:
+  /contact/update/zoe_smithson:
     post:
       description: Auto generated using Swagger Inspector
-      operationId: moviesUpdateZoe_smithsonPOST
+      operationId: contactUpdatePOST
       requestBody:
         content:
           application/json:
@@ -95,10 +95,10 @@ paths:
       x-swagger-router-controller: Default
     servers:
     - url: https://cse-342-spring23-w03.onrender.com
-  /movies/delete/zoe_smithson:
+  /contact/delete/zoe_smithson:
     post:
       description: Auto generated using Swagger Inspector
-      operationId: moviesDeleteZoe_smithsonPOST
+      operationId: mcontactDeletePOST
       requestBody:
         content:
           application/json:
@@ -128,10 +128,10 @@ paths:
       x-swagger-router-controller: Default
     servers:
     - url: https://cse-342-spring23-w03.onrender.com
-  /movies/jane_doe:
+  /contact/jane_doe:
     get:
       description: Auto generated using Swagger Inspector
-      operationId: moviesJane_doeGET
+      operationId: contactJane_doeGET
       responses:
         "200":
           description: Auto generated using Swagger Inspector
@@ -146,10 +146,10 @@ paths:
       x-swagger-router-controller: Default
     servers:
     - url: https://cse-342-spring23-w03.onrender.com
-  /movies/firstName/jane:
+  /contact/firstName/jane:
     get:
       description: Auto generated using Swagger Inspector
-      operationId: moviesFirstNameJaneGET
+      operationId: contactFirstNameJaneGET
       responses:
         "200":
           description: Auto generated using Swagger Inspector
@@ -182,10 +182,10 @@ paths:
       x-swagger-router-controller: Default
     servers:
     - url: https://cse-342-spring23-w03.onrender.com
-  /movies:
+  /contact:
     get:
       description: Auto generated using Swagger Inspector
-      operationId: moviesGET
+      operationId: contactGET
       responses:
         "200":
           description: Auto generated using Swagger Inspector
@@ -196,7 +196,7 @@ paths:
     - url: https://cse-342-spring23-w03.onrender.com
 components:
   schemas:
-    movies_create_body:
+    contact_create_body:
       type: object
       properties:
         birthday:

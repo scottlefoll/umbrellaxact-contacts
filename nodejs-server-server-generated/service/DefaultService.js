@@ -7,7 +7,7 @@
  * body Contacts_create_body  (optional)
  * returns String
  **/
-exports.moviesCreatePOST = function(body) {
+exports.contactCreatePOST = function(body) {
   return new Promise(function(resolve, reject) {
     var examples = {};
     examples['application/json'] = "";
@@ -26,7 +26,7 @@ exports.moviesCreatePOST = function(body) {
  * body Delete_zoe_smithson_body  (optional)
  * no response value expected for this operation
  **/
-exports.moviesDeleteZoe_smithsonPOST = function(body) {
+exports.contactDeleteZoe_smithsonPOST = function(body) {
   return new Promise(function(resolve, reject) {
     resolve();
   });
@@ -38,7 +38,7 @@ exports.moviesDeleteZoe_smithsonPOST = function(body) {
  *
  * returns String
  **/
-exports.moviesFirstNameJaneGET = function() {
+exports.contactFirstNameJaneGET = function() {
   return new Promise(function(resolve, reject) {
     var examples = {};
     examples['application/json'] = "";
@@ -56,7 +56,7 @@ exports.moviesFirstNameJaneGET = function() {
  *
  * no response value expected for this operation
  **/
-exports.moviesGET = function() {
+exports.contactGET = function() {
   return new Promise(function(resolve, reject) {
     resolve();
   });
@@ -68,7 +68,7 @@ exports.moviesGET = function() {
  *
  * returns String
  **/
-exports.moviesJane_doeGET = function() {
+exports.contactJane_doeGET = function() {
   return new Promise(function(resolve, reject) {
     var examples = {};
     examples['application/json'] = "";
@@ -86,7 +86,7 @@ exports.moviesJane_doeGET = function() {
  *
  * returns String
  **/
-exports.moviesLastNameDoeGET = function() {
+exports.contactLastNameDoeGET = function() {
   return new Promise(function(resolve, reject) {
     var examples = {};
     examples['application/json'] = "";
@@ -105,7 +105,7 @@ exports.moviesLastNameDoeGET = function() {
  * body Update_zoe_smithson_body  (optional)
  * returns String
  **/
-exports.moviesUpdateZoe_smithsonPOST = function(body) {
+exports.contactUpdateZoe_smithsonPOST = function(body) {
   return new Promise(function(resolve, reject) {
     var examples = {};
     examples['application/json'] = "";

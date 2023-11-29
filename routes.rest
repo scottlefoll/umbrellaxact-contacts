@@ -1,9 +1,9 @@
 ###
 
-GET http://localhost:3000/movies HTTP/1.1
+GET http://localhost:3000/contact HTTP/1.1
 ###
 
-GET https://cse341-spring23-w05-personal-working.onrender.com/movies HTTPS/1.1
+GET https://cse341-spring23-w05-personal-working.onrender.com/contact HTTPS/1.1
 
 ###
 
@@ -14,11 +14,11 @@ GET https://cse341-spring23-w05-personal-working.onrender.com/db HTTPS/1.1
 
 ###
 
-GET http://localhost:3000/movies/:id HTTP/1.1
+GET http://localhost:3000/contact/:id HTTP/1.1
 
 ###
 
-GET https://cse341-spring23-w05-personal-working.onrender.com/movies/:id HTTPS/1.1
+GET https://cse341-spring23-w05-personal-working.onrender.com/contact/:id HTTPS/1.1
 
 ###
 
@@ -100,10 +100,10 @@ PUT https://cse341-spring23-w05-personal-working.onrender.com/update/:id HTTPS/1
 
 ###
 
-GET http://localhost:3000/movies/delete/john_doe HTTP/1.1
+GET http://localhost:3000/contact/delete/john_doe HTTP/1.1
 
 ###
 
-GET https://cse-342-spring23-w03.onrender.com//movies/delete/john_doe HTTP/1.1
+GET https://cse-342-spring23-w03.onrender.com//contact/delete/john_doe HTTP/1.1
 
 ###

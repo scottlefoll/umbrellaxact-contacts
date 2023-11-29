@@ -11,9 +11,9 @@ const port = process.env.PORT || 3000;
 const uri = process.env.MONGODB_URI;
 const dbName = process.env.DB_NAME;
 const coll = process.env.DB_COLLECTION;
-const routes = require('./routes/movies-routes');
+const routes = require('./routes/contact-routes.js');
 
-app.use('/api/movies', routes);
+app.use('/api/contact', routes);
 const swaggerUi = require('swagger-ui-express');
 const swaggerDocument = require('./swagger.json');
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument, { explorer: true }));
