@@ -19,7 +19,16 @@ async function connect(uri, dbName) {
       db = client.connection.db;
       collection = db.collection(collectionName);
       isConnected = true;
+
+      // Print the collection name
       console.log('Connected successfully to the database');
+      console.log('Collection Name:', collectionName);
+
+      // Fetch and print all documents in the collection
+      const records = await collection.find({}).toArray();
+      console.log('All Records in the Collection:');
+      console.log(records);
+
       return { client, db, collection };
     } catch (err) {
       console.error('Error connecting to the database:', err);

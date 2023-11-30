@@ -7,14 +7,15 @@ async function getContacts(req, res) {
       const result = await Contact.find({});
       if (result.length === 0) {
         throw { statusCode: 404, message: 'No contacts found' };
+      } else {
+        return result;
       }
-      return result;
     } catch (err) {
-      console.error(err);
-      if (err.statusCode !== 404) {
-        res.status(500).json({ message: 'Internal server error' });
-      }
-      throw err;
+        console.error(err);
+        if (err.statusCode !== 404) {
+            res.status(500).json({ message: 'Internal server error' });
+        }
+        throw err;
     }
   }
 
@@ -26,12 +27,13 @@ async function getContactById(req, res, id) {
       const result = await Contact.findOne({ _id: id });
       if (!result || result.length === 0) {
         res.status(404).json({ message: 'No contact found for id: ' + id });
+      } else {
+        return result;
       }
-      return result;
     } catch (err) {
-      console.error(err);
-      res.status(500).json({ message: 'Internal server error' });
-      throw err;
+        console.error(err);
+        res.status(500).json({ message: 'Internal server error' });
+        throw err;
     }
 }
 
@@ -39,52 +41,51 @@ async function getContactById(req, res, id) {
 async function createContact(req, res) {
     console.log('createContact called');
     console.log('req.body:', req.body);
-    console.log('req.body.firstName:', req.body[0].firstName);
-    console.log('req.body.lastName:', req.body[0].lastName);
     let _id2;
 
     try {
-      let firstName = req.body[0].firstName;  
-      let lastName = req.body[0].lastName;
-      let address = req.body[0].address;
-      let city = req.body[0].city;
-      let state = req.body[0].state;
-      let zip = req.body[0].zip;
-      let country = req.body[0].country;
-      let email = req.body[0].email;
-      let phone = req.body[0].phone;
-      let website = req.body[0].website;
-      let company = req.body[0].company;
-      let jobTitle = req.body[0].jobTitle;
-      let contactType = req.body[0].contactType;
-      let contactMethod = req.body[0].contactMethod;
-      let notes = req.body[0].notes;
+        const {
+          FName,
+          LName,
+          Address,
+          City,
+          State,
+          Zip,
+          Country,
+          Email,
+          Phone,
+          Website,
+          Company,
+          JobTitle,
+          ContactType,
+          ContactMethod,
+          Notes,
+        } = req.body;
 
       // create a unique ID
-      _id2 = `${firstName}_${lastName}`.replace(/\s/g, '').toLowerCase();
-      console.log('33 create id2:', _id2);
+      _id2 = `${FName}_${LName}`.replace(/\s/g, '').toLowerCase();
+      console.log('Generated _id2:', _id2);
 
       // Create the contact object using the Contact model in Mongoose
       const newContact = new Contact({
         _id: _id2,
-        firstName,
-        lastName,
-        address,
-        city,
-        state,
-        zip,
-        country,
-        email,
-        phone,
-        website,
-        company,
-        jobTitle,
-        contactType,
-        contactMethod,
-        notes,
-        });
+        FName,
+        LName,
+        Address,
+        City,
+        State,
+        Zip,
+        Country,
+        Email,
+        Phone,
+        Website,
+        Company,
+        JobTitle,
+        ContactType,
+        ContactMethod,
+        Notes,
+      });
 
-      console.log('newContact:', newContact);
       // Save the contact object to the database
       const createdContact = await newContact.save();
 
@@ -115,7 +116,7 @@ async function createContact(req, res) {
   module.exports = {
     getContacts,
     getContactById,
-    createContact   
+    createContact
   };
 
   console.log('contacts-controller.js is loaded!');

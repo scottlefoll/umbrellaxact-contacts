@@ -7,7 +7,7 @@ routes.get('/', (req, res) => {
     res.send('Welcome to the MongoDB Umbrellaxact Contacts API! Please enter a valid endpoint to continue (all parameters are case-insensitive): (/contacts (List of all contacts), /contacts/:id (single contact by id, i.e. - sarah_kim ), /create/:id (create contact)');
 });
 
-routes.get('/contact', async (req, res, next) => {
+routes.get('/contact/', async (req, res, next) => {
     console.log('in /contact route');
     try {
       const collection = await contactController.getContacts();
@@ -32,7 +32,7 @@ routes.get('/contact/:id', async (req, res, next) => {
     }
 });
 
-routes.post('/create', async (req, res, next) => {
+routes.post('/create/', async (req, res, next) => {
         console.log('in /contact/create route');
         const result = validationResult(req);
         if (!result.isEmpty()) {

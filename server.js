@@ -13,7 +13,7 @@ const dbName = process.env.DB_NAME;
 const coll = process.env.DB_COLLECTION;
 const routes = require('./routes/contact-routes.js');
 
-app.use('/api/contact', routes);
+app.use('/', routes);
 const swaggerUi = require('swagger-ui-express');
 const swaggerDocument = require('./swagger.json');
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument, { explorer: true }));
