@@ -4,7 +4,7 @@ const contactController = require('../controllers/contact-controller');
 const curr_year = new Date().getFullYear();
 
 routes.get('/', (req, res) => {
-    res.send('Welcome to the Umbrellaxact Contacts API! Please enter a valid endpoint to continue (all parameters are case-insensitive): (/contact (List of all contacts), /contact/:id (single contact by id, i.e. - sarah_kim ), /create/:id (create contact)');
+    res.send('Umbrellaxact Contacts API.');
 });
 
 routes.get('/contact/', async (req, res, next) => {
