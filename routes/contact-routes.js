@@ -45,4 +45,13 @@ routes.post('/create/', async (req, res, next) => {
         }
     });
 
+routes.post('/createTemp/', async (req, res, next) => {
+    console.log('in /contact/createTemp route');
+    try {
+        await contactController.createTempContact(req, res);
+    } catch (err) {
+        next(err);
+    }
+});
+
 module.exports = routes;

@@ -47,6 +47,34 @@
         }
       }
     },
+    "/createTemp": {
+        "post": {
+            "description": "Create a Temp contact",
+            "parameters": [
+                {
+                    "name": "body",
+                    "in": "body",
+                    "description": "Free-form JSON object",
+                    "required": true,
+                    "schema": {
+                        "type": "object",
+                        "description": "Any JSON object"
+                    }
+                }
+            ],
+            "responses": {
+                "201": {
+                    "description": "Record creation successful."
+                },
+                "400": {
+                    "description": "Record creation unsuccessful. Bad Request - Invalid input or duplicate record found"
+                },
+                "500": {
+                    "description": "Record creation unsuccessful. Internal Server Error"
+                }
+            }
+        }
+    },
     "/create": {
       "post": {
         "description": "Create a contact",

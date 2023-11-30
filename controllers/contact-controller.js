@@ -1,4 +1,4 @@
-const { Contact } = require('../models/contact');
+const { Contact, TempContact } = require('../models/contact');
 
 // GET /contacts
 async function getContacts(req, res) {
@@ -34,6 +34,33 @@ async function getContactById(req, res, id) {
         console.error(err);
         res.status(500).json({ message: 'Internal server error' });
         throw err;
+    }
+}
+
+
+// POST /tempContact
+async function createTempContact(req, res) {
+    console.log('createTempContact called');
+    console.log('req.body:', req.body);
+
+    try {
+        // Create the tempContact object using the TempContact model with all data from request body
+        const newTempContact = new TempContact(req.body);
+
+        // Save the tempContact object to the database
+        const createdTempContact = await newTempContact.save();
+
+        return res.status(201).json({
+            statusCode: 201,
+            message: 'Temporary contact created successfully',
+            createdTempContactId: createdTempContact._id.toString(),
+        });
+    } catch (err) {
+        console.error(err);
+        return res.status(500).json({
+            statusCode: 500,
+            message: 'Temporary contact creation failed',
+        });
     }
 }
 
@@ -116,8 +143,8 @@ async function createContact(req, res) {
   module.exports = {
     getContacts,
     getContactById,
-    createContact
+    createContact,
+    createTempContact,
   };
 
   console.log('contacts-controller.js is loaded!');
-

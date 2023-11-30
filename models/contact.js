@@ -1,5 +1,8 @@
 const mongoose = require('mongoose');
 
+// Define a very generic schema
+const tempContactSchema = new mongoose.Schema({}, { strict: false });
+
 const contactSchema = new mongoose.Schema({
     _id: String,
     FName: String,
@@ -20,4 +23,6 @@ const contactSchema = new mongoose.Schema({
   });
 
   const Contact = mongoose.model('Contact', contactSchema);
-  module.exports = { Contact };
+  const TempContact = mongoose.model('TempContact', tempContactSchema);
+
+  module.exports = { Contact, TempContact };
