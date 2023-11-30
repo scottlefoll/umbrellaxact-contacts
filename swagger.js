@@ -13,11 +13,11 @@ const doc = {
     title: 'UmbrellaXact Contact API',        // by default: 'REST API'
     description: 'UmbrellaXact Contact API',  // by default: ''
   },
-  host: 'umbrellaxact-contacts.onrender.com/',
-//   host: 'localhost:3000',
+//   host: 'umbrellaxact-contacts.onrender.com/',
+  host: 'localhost:3000',
   basePath: '',
-  schemes: [https],
-//   schemes: ['http'],
+//   schemes: [https],
+  schemes: ['http'],
   consumes: [],  // by default: ['application/json']
   produces: [application/json],  // by default: ['application/json']
           // by default: empty object (OpenAPI 3.x)
