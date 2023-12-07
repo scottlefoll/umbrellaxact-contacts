@@ -51,6 +51,9 @@ async function createTempContact(req, res) {
         // Save the tempContact object to the database
         const createdTempContact = await newTempContact.save();
 
+        // Save the contact object to the database
+        const createdContact = await newContact.save();
+
         return res.status(201).json({
             statusCode: 201,
             message: 'Temporary contact created successfully',
