@@ -27,6 +27,7 @@
     "mongoose": "^7.2.0",
     "ngrok": "^4.3.3",
     "node.js": "^0.0.1-security",
+    "nodemailer": "^6.9.7",
     "swagger-jsdoc": "^6.2.8",
     "swagger-ui-express": "^4.6.3",
     "twilio": "^4.10.0"

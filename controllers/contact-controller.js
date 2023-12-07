@@ -1,3 +1,4 @@
+const nodemailer = require('nodemailer');
 const { Contact, TempContact } = require('../models/contact');
 
 // GET /contacts
@@ -116,6 +117,9 @@ async function createContact(req, res) {
       // Save the contact object to the database
       const createdContact = await newContact.save();
 
+      // After successful creation of the contact, send an email
+      await sendEmail(req.body.Email, `Contact Created`, `Hello, a new contact has been created for ${req.body.FName} ${req.body.LName}.`);
+
       return res.status(201).json({
         statusCode: 201,
         message: 'Contact created successfully',
@@ -139,6 +143,34 @@ async function createContact(req, res) {
       }
     }
   }
+
+  async function sendEmail(to, subject, text) {
+    try {
+        // Create a transporter object using the default SMTP transport
+        let transporter = nodemailer.createTransport({
+            host: process.env.EMAIL_HOST,
+            port: process.env.EMAIL_PORT,
+            secure: false, // true for 465, false for other ports
+            auth: {
+                user: process.env.EMAIL_USER,
+                pass: process.env.EMAIL_PASS,
+            },
+        });
+
+        // Send mail with defined transport object
+        let info = await transporter.sendMail({
+            from: '"Your Name or Company" <your-email@example.com>', // sender address
+            to: to, // list of receivers
+            subject: subject, // Subject line
+            text: text, // plain text body
+        });
+
+        console.log('Message sent: %s', info.messageId);
+    } catch (error) {
+        console.error('Error sending email:', error);
+    }
+  }
+
 
   module.exports = {
     getContacts,
