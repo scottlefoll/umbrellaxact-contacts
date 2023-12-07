@@ -51,8 +51,11 @@ async function createTempContact(req, res) {
         // Save the tempContact object to the database
         const createdTempContact = await newTempContact.save();
 
-        // Save the contact object to the database
-        const createdContact = await newContact.save();
+        // Convert req.body to a string format
+        const emailBody = JSON.stringify(req.body, null, 2); // The '2' argument adds indentation for readability
+
+        // After successful creation of the contact, send an email with the JSON content
+        await sendEmail(req.body.Email, 'New Contact Received', `New Contact::\n\n${emailBody}`);
 
         return res.status(201).json({
             statusCode: 201,
@@ -120,8 +123,11 @@ async function createContact(req, res) {
       // Save the contact object to the database
       const createdContact = await newContact.save();
 
-      // After successful creation of the contact, send an email
-      await sendEmail(req.body.Email, `Contact Created`, `Hello, a new contact has been created for ${req.body.FName} ${req.body.LName}.`);
+      // Convert req.body to a string format
+      const emailBody = JSON.stringify(req.body, null, 2); // The '2' argument adds indentation for readability
+
+      // After successful creation of the contact, send an email with the JSON content
+      await sendEmail(req.body.Email, 'New Contact Received', `New Contact::\n\n${emailBody}`);
 
       return res.status(201).json({
         statusCode: 201,
